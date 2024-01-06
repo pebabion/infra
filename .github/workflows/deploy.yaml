@@ -1,0 +1,31 @@
+name: Deploy
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.5.7
+      - name: Authenticate with Google Cloud
+        id: "auth"
+        uses: "google-github-actions/auth@v2"
+        with:
+          credentials_json: "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}"
+      - name: format
+        working-directory: ./gcp
+        run: terraform fmt -check
+      - name: plan
+        id: plan
+        working-directory: ./gcp
+        run: terraform plan
+
+      - run: echo ${{ steps.plan.outputs.stdout }}
+        working-directory: ./gcp
+      - run: echo ${{ steps.plan.outputs.stderr }}
+        working-directory: ./gcp
+      - run: echo ${{ steps.plan.outputs.exitcode }}
+        working-directory: ./gcp
