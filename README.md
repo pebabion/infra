@@ -1,4 +1,4 @@
-# Infra
+# Infra ⚙️
 
 ## Terraform
 
