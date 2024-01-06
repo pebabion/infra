@@ -27,6 +27,7 @@ jobs:
         run: terraform init
       - name: plan
         id: plan
+        timeout-minutes: 3
         working-directory: ./gcp
         run: terraform plan
 
