@@ -16,16 +16,16 @@ jobs:
         with:
           credentials_json: "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}"
       - name: format
-        working-directory: ./gcp
+        working-directory: gcp
         run: terraform fmt -check
       - name: plan
         id: plan
-        working-directory: ./gcp
+        working-directory: gcp
         run: terraform plan
 
       - run: echo ${{ steps.plan.outputs.stdout }}
-        working-directory: ./gcp
+        working-directory: gcp
       - run: echo ${{ steps.plan.outputs.stderr }}
-        working-directory: ./gcp
+        working-directory: gcp
       - run: echo ${{ steps.plan.outputs.exitcode }}
-        working-directory: ./gcp
+        working-directory: gcp
