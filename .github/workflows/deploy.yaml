@@ -34,3 +34,8 @@ jobs:
         timeout-minutes: 3
         working-directory: ./gcp
         run: terraform plan
+      - name: apply
+        id: apply
+        timeout-minutes: 3
+        working-directory: ./gcp
+        run: terraform apply -auto-approve
