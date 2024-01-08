@@ -3,8 +3,7 @@ resource "google_billing_budget" "budget" {
   display_name    = "Monthly Total Budget"
   amount {
     specified_amount {
-      currency_code = "USD"
-      units         = var.budget_amount
+      units = var.budget_amount
     }
   }
   threshold_rules {

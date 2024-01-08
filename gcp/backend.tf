@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "pebabion-terraform-backend"
-    prefix = "terraform/state"
+    bucket = "pebabion-terraform-state"
+    prefix = "terraform.tfstate"
   }
 }
