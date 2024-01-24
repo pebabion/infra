@@ -6,6 +6,7 @@ variable "services" {
     "billingbudgets.googleapis.com",
     "cloudbilling.googleapis.com",
     "iam.googleapis.com",
+    "container.googleapis.com",
   ]
 }
 
