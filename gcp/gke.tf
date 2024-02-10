@@ -16,6 +16,11 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
   cluster    = google_container_cluster.primary_cluster.name
   node_count = 1
 
+  timeouts {
+    create = "60m"
+    delete = "2h"
+  }
+
   node_config {
     preemptible  = true
     machine_type = "f1-micro"
