@@ -8,6 +8,5 @@ terraform {
 }
 
 provider "heroku" {
-    # API Key is expected to be set via HEROKU_API_KEY environment variable
+  # API Key is expected to be set via HEROKU_API_KEY environment variable
 }
-
