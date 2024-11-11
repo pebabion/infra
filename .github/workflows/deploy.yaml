@@ -28,19 +28,19 @@ jobs:
         with:
           credentials_json: "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}"
       - name: format
-        working-directory: ./gcp
+        working-directory: ./heroku
         run: terraform fmt -check
       - name: init
         id: init
-        working-directory: ./gcp
+        working-directory: ./heroku
         run: terraform init
       - name: plan
         id: plan
         timeout-minutes: 3
-        working-directory: ./gcp
+        working-directory: ./heroku
         run: terraform plan
       - name: apply
         id: apply
         timeout-minutes: 3
-        working-directory: ./gcp
+        working-directory: ./heroku
         run: terraform apply -auto-approve
