@@ -1,5 +1,5 @@
 resource "heroku_app" "sample-app" {
-  name = "sample-app"
+  name   = "sample-app"
   region = "us"
 
 
