@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  TF_VAR_heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+  HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
 jobs:
   deploy:
     timeout-minutes: 120

@@ -1,5 +1,5 @@
-resource "heroku_app" "sample-app" {
-  name   = "sample-app"
+resource "heroku_app" "pebabion-sample-app" {
+  name   = "pebabion-sample-app"
   region = "us"
 
 
